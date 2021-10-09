@@ -14,10 +14,8 @@ const schemaStatusContact = Joi.object({
   favorite: Joi.boolean().required(),
 });
 
-const pattern = '\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}';
-
 const schemaId = Joi.object({
-  id: Joi.string().pattern(new RegExp(pattern)).required(),
+  id: Joi.string().required(),
 });
 
 const validate = async (schema, obj, res, next) => {
